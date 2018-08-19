@@ -19,6 +19,24 @@ namespace ConsoleApp1
                 //把db所有的過程寫在console上
                 db.Database.Log = Console.WriteLine;
 
+                var data = db.Database.SqlQuery<Course>("select [CourseID],[Title],[Credits] from [dbo].[Course] where CourseID >= @p0", 2);
+
+                foreach (var item in data)
+                {
+                    Console.WriteLine(item.Title);
+                }
+
+                //var c = new Course()
+                //{
+                //    Title = "Test1",
+                //    Credits = CourseCredits.Poor,
+                //    DepartmentID = 1
+                //};
+
+
+                //db.Course.Add(c);
+                //db.SaveChanges();
+
                 //是否使用延遲載入
                 //db.Configuration.LazyLoadingEnabled = false;
                 //是否使用代理物件
@@ -29,17 +47,24 @@ namespace ConsoleApp1
                 //var dept = db.Department.Find(1);
 
                 //導覽屬性，一併把相關的Course查出來
-                var dept = db.Department.Include(x => x.Course);
+                //var dept = db.Department.Find(1);//.Include(x => x.Course);
 
-                foreach (var item in dept)
-                {
-                    Console.WriteLine(item.Name);
-                    Console.WriteLine("===========================");
-                    foreach (var item1 in item.Course)
-                    {
-                        Console.WriteLine(item1.Title);
-                    }
-                }
+                //dept.Name = "AA";
+
+                //db.SaveChanges();
+
+                //var dept = db.GetDepartment();
+
+
+                //foreach (var item in dept)
+                //{
+                //    Console.WriteLine(item.Name);
+                //    //Console.WriteLine("===========================");
+                //    //foreach (var item1 in item.Course)
+                //    //{
+                //    //    Console.WriteLine(item1.Title);
+                //    //}
+                //}
 
                 //QueryCourse(db);
 

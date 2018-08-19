@@ -33,7 +33,7 @@ public partial class Course
 
     public string Title { get; set; }
 
-    public int Credits { get; set; }
+    public CourseCredits Credits { get; set; }
 
     public int DepartmentID { get; set; }
 

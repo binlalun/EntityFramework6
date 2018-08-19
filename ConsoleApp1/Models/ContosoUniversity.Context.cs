@@ -126,6 +126,13 @@ public partial class ContosoUniversityEntities : DbContext
         return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Department_Insert_Result1>("Department_Insert", nameParameter, budgetParameter, startDateParameter, instructorIDParameter);
     }
 
+
+    public virtual ObjectResult<GetDepartment_Result> GetDepartment()
+    {
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetDepartment_Result>("GetDepartment");
+    }
+
 }
 
 }

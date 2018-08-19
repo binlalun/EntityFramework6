@@ -17,7 +17,7 @@
 
             foreach (var entry in entries)
             {
-                if(entry.Entity is Course && entry.State == EntityState.Modified)
+                if (entry.Entity is Course && entry.State == EntityState.Modified)
                 {
                     entry.CurrentValues.SetValues(new { ModifiedOn = DateTime.Now });
                 }
