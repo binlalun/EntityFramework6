@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace ConsoleApp1
 {
@@ -15,13 +16,33 @@ namespace ConsoleApp1
         {
             using (var db = new ContosoUniversityEntities())
             {
-                QueryCourse(db);
+                //把db所有的過程寫在console上
+                //db.Database.Log = Console.WriteLine;
 
-                InsertDepartment(db);
+                //注意ORM的N+1地雷
 
-                UpdateDepartment(db);
+                //var dept = db.Department.Find(1);
 
-                RemoveDepartment(db);
+                //導覽屬性，一併把相關的Course查出來
+                var dept = db.Department.Include(x => x.Course);
+
+                foreach (var item in dept)
+                {
+                    Console.WriteLine(item.Name);
+                    Console.WriteLine("===========================");
+                    foreach (var item1 in item.Course)
+                    {
+                        Console.WriteLine(item1.Title);
+                    }
+                }
+
+                //QueryCourse(db);
+
+                //InsertDepartment(db);
+
+                //UpdateDepartment(db);
+
+                //RemoveDepartment(db);
             }
         }
 
