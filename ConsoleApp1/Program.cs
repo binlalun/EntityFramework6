@@ -17,7 +17,12 @@ namespace ConsoleApp1
             using (var db = new ContosoUniversityEntities())
             {
                 //把db所有的過程寫在console上
-                //db.Database.Log = Console.WriteLine;
+                db.Database.Log = Console.WriteLine;
+
+                //是否使用延遲載入
+                //db.Configuration.LazyLoadingEnabled = false;
+                //是否使用代理物件
+                //db.Configuration.ProxyCreationEnabled = false;
 
                 //注意ORM的N+1地雷
 
