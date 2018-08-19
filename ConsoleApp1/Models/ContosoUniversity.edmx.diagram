@@ -5,17 +5,25 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="c9020017352d42789b19c9465346134e" Name="Diagram1">
-        <EntityTypeShape EntityType="ContosoUniversityModel.Course" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContosoUniversityModel.Course" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ContosoUniversityModel.Department" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ContosoUniversityModel.Enrollment" Width="1.5" PointX="7.5" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="ContosoUniversityModel.OfficeAssignment" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ContosoUniversityModel.Person" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
         <AssociationConnector Association="ContosoUniversityModel.FK_dbo_Course_dbo_Department_DepartmentID" ManuallyRouted="false" />
-        <AssociationConnector Association="ContosoUniversityModel.FK_dbo_Enrollment_dbo_Course_CourseID" ManuallyRouted="false" />
         <AssociationConnector Association="ContosoUniversityModel.FK_dbo_Department_dbo_Instructor_InstructorID" ManuallyRouted="false" />
-        <AssociationConnector Association="ContosoUniversityModel.FK_dbo_Enrollment_dbo_Person_StudentID" ManuallyRouted="false" />
         <AssociationConnector Association="ContosoUniversityModel.FK_dbo_OfficeAssignment_dbo_Instructor_InstructorID" ManuallyRouted="false" />
         <AssociationConnector Association="ContosoUniversityModel.CourseInstructor" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ContosoUniversityModel.Enrollment" Width="1.5" PointX="7.5" PointY="2" />
+        <AssociationConnector Association="ContosoUniversityModel.FK_dbo_Enrollment_dbo_Course_CourseID" />
+        <AssociationConnector Association="ContosoUniversityModel.FK_dbo_Enrollment_dbo_Person_StudentID" />
+        </Diagram>
+      <Diagram DiagramId="c754f4634a4f4078a3134509a92af1fd" Name="Diagram2" >
+        <EntityTypeShape EntityType="ContosoUniversityModel.Course" Width="1.5" PointX="0.75" PointY="0.75" FillColor="Red" />
+        <EntityTypeShape EntityType="ContosoUniversityModel.Department" Width="1.5" PointX="3" PointY="6.5" />
+        <AssociationConnector Association="ContosoUniversityModel.FK_dbo_Course_dbo_Department_DepartmentID" />
+        <EntityTypeShape EntityType="ContosoUniversityModel.Person" Width="1.5" PointX="0.75" PointY="6.375" />
+        <AssociationConnector Association="ContosoUniversityModel.FK_dbo_Department_dbo_Instructor_InstructorID" />
+        <AssociationConnector Association="ContosoUniversityModel.CourseInstructor" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

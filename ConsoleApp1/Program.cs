@@ -37,6 +37,7 @@ namespace ConsoleApp1
             db.Department.Add(dept);
             db.SaveChanges();
 
+            //上述這種寫法才可以拿到自動編號的號碼
             InsertedId = dept.DepartmentID;
         }
 
